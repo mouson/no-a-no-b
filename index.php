@@ -2,7 +2,7 @@
 <html>
 <head>
 
-  <title>Project Lunchbox</title>
+  <title>反呵呵，不要再有下一個QQQ 產生器</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css?1">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
