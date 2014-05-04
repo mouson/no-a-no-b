@@ -1,0 +1,109 @@
+
+div {
+	margin: 0px auto;
+}
+
+#fblogin {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.creator-form {
+	width: 430px;
+	font-family: Arial;
+	position: relative;
+}
+
+.creator-form h1 {
+	color: brown;
+	text-align: center;
+}
+
+.creator-form h4 {
+	text-align: center;
+}
+
+.go-button {
+	position: absolute;
+	right: 10%;
+	bottom: 20%;
+	font-size: 30px;
+	color: blue;
+}
+
+.post-button {
+	font-size: 30px;
+	color: blue;
+}
+
+#post2iu {
+	margin-top: 20px;
+	text-align: center;
+}
+
+#flag-outline {
+	width: 720px;
+	height: 530px;
+	position: relative;
+	background: url('flag_back.png');
+}
+
+.results {
+	color: gray;
+	/* Mac 下的標楷體叫做 BiauKai */
+	font-family: “標楷體”, DFKai-sb, BiauKai;	
+}
+
+#result-cb {
+	font-size: 150px;
+	position: absolute;
+	top: 160px;
+	right: 365px;
+	letter-spacing: -35px;
+}
+
+#result-cs {
+	font-size: 55px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	top: 305px;
+	left: 0px;
+	right: 0px;
+}
+
+#result-eb {
+	font-size: 40px;
+	position: absolute;
+	top: 230px;
+	left: 385px;
+}
+
+#result-es {
+	font-size: 30px;
+	position: absolute;
+	top: 270px;
+	left: 385px;
+}
+
+#canvas-container {
+	margin-top: 30px;
+	text-align: center;
+}
+
+#iuLink {
+	font-size: 25px;
+}
+
+#footer {
+	margin-top: 30px;
+	text-align: center;
+}
+
+canvas {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
