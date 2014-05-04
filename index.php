@@ -71,7 +71,7 @@ $.ajax({
 
   <div class="creator-form">
     <h1>Project Lunchbox</h1>
-    <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<</h4>
+    <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<<br><div class="fb-share-button" data-href="http://trending.shouko.tw/no-a-no-b/" data-type="button"></div></h4>
 
 <div id="data-form">
     中文大字：<input id="input-cb" placeholder="反呵呵"><br>
