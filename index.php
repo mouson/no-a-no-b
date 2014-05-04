@@ -4,7 +4,7 @@
 
   <title>Project Lunchbox</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css?<?php echo time()?>">
+  <link rel="stylesheet" href="style.css?1">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="./html2canvas.js?"></script>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -59,6 +59,16 @@ $.ajax({
   </script>
 </head>
 <body>
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=757338127631275&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
   <div class="creator-form">
     <h1>Project Lunchbox</h1>
     <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<</h4>
@@ -91,13 +101,16 @@ $.ajax({
 </div>
   </div>
 
-   <div id="canvas-container"></div>
+   <div id="canvas-container">
+     <img src="demo.png" />
+   </div>
 
    <div id="post2iu" style="display:none">
      <button onclick="uploadToImgur()" class="post-button">上傳到ImgUR</button><br><br>
      <input id="iuLink" size="30" onclick="this.setSelectionRange(0, this.value.length)" style="display: none" />
    </div>
-  <div id="flag-outline" style="background-image: url('flag_back/taiwan.png');">
+   <div class="fb-comments" data-href="http://trending.shouko.tw/no-a-no-b/" data-numposts="10" data-colorscheme="light"></div>
+  <div id="flag-outline" style="background-image: url('flag_back/taiwan.png'); visibility: hidden">
     <ul class="flag-info">
       <span id="result-cb" class="results">反呵呵</span>
       <span id="result-cs" class="results">不要再有下一個QQQ</span>

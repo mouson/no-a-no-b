@@ -58,6 +58,12 @@ div {
 	width: 80px;
 }
 
+.fb-comments{
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+}
+
 #result-cb {
 	font-size: 150px;
 	position: absolute;
