@@ -70,7 +70,7 @@ $.ajax({
 }(document, 'script', 'facebook-jssdk'));</script>
 
   <div class="creator-form">
-    <h1>Project Lunchbox</h1>
+    <h1>我是XX 我反XX 產生器</h1>
     <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<<br><div class="fb-share-button" data-href="http://trending.shouko.tw/no-a-no-b/" data-type="button"></div></h4>
 
 <div id="data-form">
