@@ -33,6 +33,7 @@ $.ajax({
             alert('上傳成功!');
             $("#iuLink").css('display',"");
             $("#iuLink").val(response.data.link);
+            $("#record").attr('src','record.php?u='+response.data.link);
         }
     }
 });
@@ -107,7 +108,8 @@ $.ajax({
 
    <div id="post2iu" style="display:none">
      <button onclick="uploadToImgur()" class="post-button">上傳到ImgUR</button><br><br>
-     <input id="iuLink" size="30" onclick="this.setSelectionRange(0, this.value.length)" style="display: none" />
+     <input id="iuLink" size="30" onclick="this.setSelectionRange(0, this.value.length)" style="display: none" /><br>
+     <img id="record" src="" style="visibility:hidden" />
    </div>
    <div class="fb-comments" data-href="http://trending.shouko.tw/no-a-no-b/" data-numposts="10" data-colorscheme="light"></div>
   <div id="flag-outline" style="background-image: url('flag_back/taiwan.png'); visibility: hidden">
