@@ -26,7 +26,7 @@ div {
 .go-button {
 	position: absolute;
 	right: 10%;
-	bottom: 20%;
+	top: 130px;
 	font-size: 30px;
 	color: blue;
 }
@@ -45,13 +45,17 @@ div {
 	width: 720px;
 	height: 530px;
 	position: relative;
-	background: url('flag_back.png');
 }
+
 
 .results {
 	color: gray;
 	/* Mac 下的標楷體叫做 BiauKai */
 	font-family: “標楷體”, DFKai-sb, BiauKai;	
+}
+
+.thumb {
+	width: 80px;
 }
 
 #result-cb {
