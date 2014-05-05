@@ -8,6 +8,10 @@ div {
 	text-align: center;
 }
 
+.navbar {
+	text-align: center;
+}
+
 .creator-form {
 	width: 430px;
 	font-family: Arial;
@@ -26,7 +30,7 @@ div {
 .go-button {
 	position: absolute;
 	right: 10%;
-	top: 130px;
+	top: 180px;
 	font-size: 30px;
 	color: blue;
 }

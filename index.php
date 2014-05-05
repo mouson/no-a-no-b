@@ -4,7 +4,7 @@
 
   <title>我是XX 我反XX 產生器</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css?1">
+  <link rel="stylesheet" href="style.css?4">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="./html2canvas.js?"></script>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -72,6 +72,7 @@ $.ajax({
 
   <div class="creator-form">
     <h1>我是XX 我反XX 產生器</h1>
+    <h4 class="navbar"><a href="./">[產生器]</a> <a href="provide.php">[背景圖投稿]</a></h4>
     <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<<br><div class="fb-share-button" data-href="http://trending.shouko.tw/no-a-no-b/" data-type="button"></div></h4>
 
 <div id="data-form">
