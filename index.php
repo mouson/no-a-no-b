@@ -130,6 +130,7 @@ $.ajax({
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
   ga('create', 'UA-45786123-3', 'shouko.tw');
+  ga('require', 'displayfeatures');
   ga('send', 'pageview');
 
 </script>
