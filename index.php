@@ -62,16 +62,21 @@ $.ajax({
 	            $("#iuLink").val(response.data.link);
             }else{
             	switch(sType){
+            	
             	case 1:
+            	
             	// share to facebook
 					 window.open(
       'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://trending.shouko.tw/no-a-no-b/?u='+imglink), 
       'facebook-share-dialog', 
       'width=626,height=436'); 
       				break;
+
       			case 2:
+      			// share to plurk
       				window.open('https://www.plurk.com/?qualifier=shares&status='.concat(encodeURIComponent('http://trending.shouko.tw/no-a-no-b/?u='+imglink)).concat(' ').concat('(').concat(encodeURIComponent(document.title)).concat(')'));
       				break;
+
       			}
 
             
