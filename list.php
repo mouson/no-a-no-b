@@ -14,6 +14,12 @@ function qMysql($str){
    return $result;
 }
 
+if(isset($_GET['p']) && $_GET['p']!=0){
+  $p = abs($_GET['p']);
+}else{
+  $p = 1;
+}
+
 $bigImage = "demo.png";
 
 ?>
@@ -30,7 +36,7 @@ $bigImage = "demo.png";
 <meta property="og:url" content="" />
 <meta property="og:description" content="" />
 
-  <link rel="stylesheet" href="style.css?10">
+  <link rel="stylesheet" href="style.css?11">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="./html2canvas.js?"></script>
 
@@ -53,10 +59,43 @@ $bigImage = "demo.png";
     <h4><div class="fb-like" data-href="<?php echo $currentPage; ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 </h4>
 </div>
+<div class="pager">
+<?php
+  $start = ($p-1)/10;
+  $start = floor($start);
+  $start *= 10;
+  $start += 1;
 
+if($start!=1){
+  echo '<a href="list.php">&lt;&lt; 最新</a>&nbsp;&nbsp;';
+  echo '<a href="list.php?p=';
+  echo $start-1;
+  echo '">&lt; 較新</a>&nbsp;&nbsp;';
+}
+
+for($i = 0; $i < 10; $i++){
+  if( $start+$i != $p){
+    echo '<a href="list.php?p=';
+    echo $start+$i;
+    echo '">';
+  }
+  echo $start+$i;
+  if( $start+$i != $p){
+    echo '</a>';
+  }
+  echo '&nbsp;&nbsp;';
+}
+
+echo '<a href="list.php?p=';
+echo $p + 1;
+echo '">較舊 &gt;</a>';
+
+?>
+</div><br>
 <table class="flag-backs">
 <?php
-$query = "SELECT img FROM record ORDER by time DESC LIMIT 0,16";
+$limit = ($p - 1)*16;
+$query = "SELECT img FROM record ORDER by time DESC LIMIT ".$limit.",16";
 $result = qMysql($query);
 $count = 0;
 while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
@@ -64,7 +103,7 @@ if($count % 4 == 0){
 	echo "<tr>";
 }
     echo '<td><a href="./?u='.$row[0].'"><img src="http://i.imgur.com/'.$row[0].'t.png"></a>';
-    echo '<br><div class="fb-like" data-href="http://trending.shouko.tw/no-a-no-b/?u='.$row[0].'" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>';
+//    echo '<br><div class="fb-like" data-href="http://trending.shouko.tw/no-a-no-b/?u='.$row[0].'" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>';
     echo "</td><td> </td>";
 if($count % 4 == 3){
 	echo "</tr><tr><td> </td></tr><tr><td> </td></tr>";

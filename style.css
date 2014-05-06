@@ -18,6 +18,11 @@ div {
 	position: relative;
 }
 
+.pager {
+	text-align: center;
+	margin: 0 auto;
+}
+
 .creator-form h1 {
 	color: brown;
 	text-align: center;
