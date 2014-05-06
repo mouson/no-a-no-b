@@ -64,12 +64,13 @@ $.ajax({
             	switch(sType){
             	
             	case 1:
-            	
+
             	// share to facebook
 					 window.open(
       'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://trending.shouko.tw/no-a-no-b/?u='+imglink), 
       'facebook-share-dialog', 
       'width=626,height=436'); 
+
       				break;
 
       			case 2:
@@ -119,7 +120,7 @@ $.ajax({
 
   <div class="creator-form">
     <h1>我是XX 我反XX 產生器</h1>
-    <h4 class="navbar"><a href="./">[產生器]</a> <a href="provide.php">[背景圖投稿]</a></h4>
+    <h4 class="navbar"><a href="./">[產生器]</a> <a href="provide.php">[背景圖投稿]</a> <a href="list.php">[網友作品]</a></h4>
     <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<<br>
     <h4><div class="fb-like" data-href="<?php echo $currentPage; ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 </h4>
