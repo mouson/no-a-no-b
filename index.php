@@ -33,7 +33,7 @@ if(isset($_GET['u'])){
 
 var imgToPost = "";
 
-function uploadToImgur(showAlert){
+function uploadToImgur(sType){
 
 var img = imgToPost.split(',')[1];
 
@@ -55,17 +55,26 @@ $.ajax({
 			imglink = imglink[1].split('.png');
 			imglink = imglink[0];
             $("#record").attr('src','record.php?u='+imglink);
-        	if(showAlert==1){
+        	if(sType==0){
 				// show alert when upload success        	
     	        alert('上傳成功!');
         	    $("#iuLink").css('display',"");
 	            $("#iuLink").val(response.data.link);
             }else{
+            	switch(sType){
+            	case 1:
             	// share to facebook
 					 window.open(
       'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://trending.shouko.tw/no-a-no-b/?u='+imglink), 
       'facebook-share-dialog', 
       'width=626,height=436'); 
+      				break;
+      			case 2:
+      				window.open('https://www.plurk.com/?qualifier=shares&status='.concat(encodeURIComponent('http://trending.shouko.tw/no-a-no-b/?u='+imglink)).concat(' ').concat('(').concat(encodeURIComponent(document.title)).concat(')'));
+      				break;
+      			}
+
+            
             }
         }
     }
@@ -148,7 +157,9 @@ $.ajax({
    </div>
 
    <div id="post2iu" style="display:none">
-     <button onclick="uploadToImgur(1)" class="post-button">上傳到ImgUR</button> <button onclick="uploadToImgur(0)" class="post-button">分享到FB</button><br><br>
+     <button onclick="uploadToImgur(0)" class="post-button">上傳到ImgUR</button> 
+     <button onclick="uploadToImgur(1)" class="post-button">上傳到FB</button> 
+     <button onclick="uploadToImgur(2)" class="post-button">分享到Plurk</button><br><br>
      <input id="iuLink" size="30" onclick="this.setSelectionRange(0, this.value.length)" style="display: none" /><br>
      <img id="record" src="" style="visibility:hidden" />
 </div>
