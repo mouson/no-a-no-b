@@ -36,7 +36,6 @@ $.ajax({
     	        alert('上傳成功!');
         	    $("#iuLink").css('display',"");
 	            $("#iuLink").val(response.data.link);
-	            $("#record").attr('src','record.php?u='+response.data.link);
             }else{
             	// return only link for facebook share
             	return response.data.link;
