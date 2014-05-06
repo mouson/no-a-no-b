@@ -129,6 +129,7 @@ $.ajax({
         <td><label><input type="radio" name="input-back" value="jet" />戰機</label></td>
         <td><label><input type="radio" name="input-back" value="kuma" />熊</label></td>
         <td><label><input type="radio" name="input-back" value="cat" />貓</label></td>
+        <td><label><input type="radio" name="input-back" value="man" />人</label></td>
       </tr>
       <tr>
         <td><img src="flag_back/taiwan.png" class="thumb" /></td>
@@ -138,6 +139,7 @@ $.ajax({
         <td><img src="flag_back/jet.png" class="thumb" /></td>
         <td><img src="flag_back/kuma.png" class="thumb" /></td>
         <td><img src="flag_back/cat.png" class="thumb" /></td>
+        <td><img src="flag_back/man.png" class="thumb" /></td>
       </tr>
     </table>
 
