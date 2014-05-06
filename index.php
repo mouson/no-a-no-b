@@ -124,7 +124,7 @@ $.ajax({
     <h1>我是XX 我反XX 產生器</h1>
     <h4 class="navbar"><a href="./">[產生器]</a> <a href="provide.php">[背景圖投稿]</a> <a href="list.php">[網友作品]</a></h4>
     <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<<br>
-    <h4><div class="fb-like" data-href="<?php echo $currentPage; ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+    <h4><div class="fb-like" data-href="http://trending.shouko.tw/no-a-no-b/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 </h4>
 
 <div id="data-form">
@@ -161,7 +161,8 @@ $.ajax({
     </table>
 
    <div id="canvas-container">
-     <img src="<?php echo $bigImage; ?>" />
+     <img src="<?php echo $bigImage; ?>" /><br>
+    <div class="fb-like" data-href="<?php echo $currentPage; ?>" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
    </div>
 
    <div id="post2iu" style="display:none">
