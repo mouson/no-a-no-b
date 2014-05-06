@@ -21,10 +21,10 @@ if(isset($_GET['u'])){
 <meta property="og:title" content="我是XX 我反XX 產生器" />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="<?php echo $bigImage; ?>" />
-<meta property="og:url" content="<?php echo $currentPage; ?>" />
+<meta property="og:url" content="" />
 <meta property="og:description" content="" />
 
-  <link rel="stylesheet" href="style.css?5">
+  <link rel="stylesheet" href="style.css?9">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="./html2canvas.js?"></script>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -51,22 +51,25 @@ $.ajax({
         if(response.success) {
             console.log(response.data.link);
             $("#record").attr('src','record.php?u='+response.data.link);
-        	if(showAlert){
+        	if(showAlert==1){
 				// show alert when upload success        	
     	        alert('上傳成功!');
         	    $("#iuLink").css('display',"");
 	            $("#iuLink").val(response.data.link);
             }else{
-            	// return only link for facebook share
-            	return response.data.link;
+            	// share to facebook
+            	var imglink = response.data.link;
+            	imglink = imglink.split('.com/');
+				imglink = imglink[1].split('.png');
+				imglink = imglink[0];
+					 window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://trending.shouko.tw/no-a-no-b/?u='+imglink), 
+      'facebook-share-dialog', 
+      'width=626,height=436'); 
             }
         }
     }
 });
-}
-
-function shareToFb(){
-	var imglink=uploadToImgur(false);
 }
 
   function create(){
@@ -103,7 +106,9 @@ function shareToFb(){
   <div class="creator-form">
     <h1>我是XX 我反XX 產生器</h1>
     <h4 class="navbar"><a href="./">[產生器]</a> <a href="provide.php">[背景圖投稿]</a></h4>
-    <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<<br><div class="fb-share-button" data-href="<?php echo $currentPage; ?>" data-type="button"></div></h4>
+    <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<<br>
+    <h4><div class="fb-like" data-href="<?php echo $currentPage; ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+</h4>
 
 <div id="data-form">
     中文大字：<input id="input-cb" placeholder="反呵呵"><br>
@@ -140,7 +145,7 @@ function shareToFb(){
    </div>
 
    <div id="post2iu" style="display:none">
-     <button onclick="uploadToImgur(1)" class="post-button">上傳到ImgUR</button><br><br>
+     <button onclick="uploadToImgur(1)" class="post-button">上傳到ImgUR</button> <button onclick="uploadToImgur(0)" class="post-button">分享到FB</button><br><br>
      <input id="iuLink" size="30" onclick="this.setSelectionRange(0, this.value.length)" style="display: none" /><br>
      <img id="record" src="" style="visibility:hidden" />
 </div>
