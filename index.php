@@ -1,9 +1,29 @@
+<?php
+
+$currentPage="http://trending.shouko.tw/no-a-no-b/";
+$bigImage = "demo.png";
+
+if(isset($_GET['u'])){
+	$bigImage = $_GET['u'];
+	$bigImage = preg_replace("/[^a-zA-Z0-9]+/", "", $bigImage);
+	$currentPage .= "?u=".$bigImage;
+	$bigImage = "http://i.imgur.com/".$bigImage.".png";
+}
+
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
 
   <title>我是XX 我反XX 產生器</title>
   <meta charset="UTF-8">
+
+<meta property="og:title" content="我是XX 我反XX 產生器" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="<?php echo $bigImage; ?>" />
+<meta property="og:url" content="<?php echo $currentPage; ?>" />
+<meta property="og:description" content="" />
+
   <link rel="stylesheet" href="style.css?5">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="./html2canvas.js?"></script>
@@ -45,6 +65,10 @@ $.ajax({
 });
 }
 
+function shareToFb(){
+	var imglink=uploadToImgur(false);
+}
+
   function create(){
     $("#result-cb").html($("#input-cb").val());
     $("#result-cs").html($("#input-cs").val());
@@ -79,7 +103,7 @@ $.ajax({
   <div class="creator-form">
     <h1>我是XX 我反XX 產生器</h1>
     <h4 class="navbar"><a href="./">[產生器]</a> <a href="provide.php">[背景圖投稿]</a></h4>
-    <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<<br><div class="fb-share-button" data-href="http://trending.shouko.tw/no-a-no-b/" data-type="button"></div></h4>
+    <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<<br><div class="fb-share-button" data-href="<?php echo $currentPage; ?>" data-type="button"></div></h4>
 
 <div id="data-form">
     中文大字：<input id="input-cb" placeholder="反呵呵"><br>
@@ -112,7 +136,7 @@ $.ajax({
   </div>
 
    <div id="canvas-container">
-     <img src="demo.png" />
+     <img src="<?php echo $bigImage; ?>" />
    </div>
 
    <div id="post2iu" style="display:none">
