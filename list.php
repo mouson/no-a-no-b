@@ -55,8 +55,6 @@ if(isset($_GET['p']) && $_GET['p']!=0){
 <meta property="og:description" content="" />
 
   <link rel="stylesheet" href="style.css?11">
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
-  <script src="./html2canvas.js?"></script>
 
 </head>
 <body>

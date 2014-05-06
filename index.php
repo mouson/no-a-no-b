@@ -27,10 +27,8 @@ if(isset($_GET['u'])){
 <meta property="og:description" content="" />
 
   <link rel="stylesheet" href="style.css?10">
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="./html2canvas.js?"></script>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
   <script type="text/javascript">
 
 var imgToPost = "";
