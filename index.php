@@ -24,7 +24,7 @@ if(isset($_GET['u'])){
 <meta property="og:url" content="" />
 <meta property="og:description" content="" />
 
-  <link rel="stylesheet" href="style.css?9">
+  <link rel="stylesheet" href="style.css?10">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="./html2canvas.js?"></script>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -50,7 +50,11 @@ $.ajax({
     success: function(response) {
         if(response.success) {
             console.log(response.data.link);
-            $("#record").attr('src','record.php?u='+response.data.link);
+        	var imglink = response.data.link;
+        	imglink = imglink.split('.com/');
+			imglink = imglink[1].split('.png');
+			imglink = imglink[0];
+            $("#record").attr('src','record.php?u='+imglink);
         	if(showAlert==1){
 				// show alert when upload success        	
     	        alert('上傳成功!');
@@ -58,10 +62,6 @@ $.ajax({
 	            $("#iuLink").val(response.data.link);
             }else{
             	// share to facebook
-            	var imglink = response.data.link;
-            	imglink = imglink.split('.com/');
-				imglink = imglink[1].split('.png');
-				imglink = imglink[0];
 					 window.open(
       'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://trending.shouko.tw/no-a-no-b/?u='+imglink), 
       'facebook-share-dialog', 
@@ -116,7 +116,11 @@ $.ajax({
     英文大字：<input id="input-eb" placeholder="No KEKE"><br>
     英文小字：<input id="input-es" placeholder="No More KerKerKer"><br>
     選擇背景：
-    <table>
+    <button onclick="create()" class="go-button">Create</button>
+</div>
+  </div>
+
+    <table class="flag-backs">
       <tr>
         <td><label><input type="radio" name="input-back" value="taiwan" checked />台灣</label></td>
         <td><label><input type="radio" name="input-back" value="cow" />牛</label></td>
@@ -136,9 +140,6 @@ $.ajax({
         <td><img src="flag_back/cat.png" class="thumb" /></td>
       </tr>
     </table>
-    <button onclick="create()" class="go-button">Create</button>
-</div>
-  </div>
 
    <div id="canvas-container">
      <img src="<?php echo $bigImage; ?>" />
