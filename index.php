@@ -13,7 +13,7 @@
 
 var imgToPost = "";
 
-function uploadToImgur(){
+function uploadToImgur(showAlert){
 
 var img = imgToPost.split(',')[1];
 
@@ -30,10 +30,17 @@ $.ajax({
     success: function(response) {
         if(response.success) {
             console.log(response.data.link);
-            alert('上傳成功!');
-            $("#iuLink").css('display',"");
-            $("#iuLink").val(response.data.link);
             $("#record").attr('src','record.php?u='+response.data.link);
+        	if(showAlert){
+				// show alert when upload success        	
+    	        alert('上傳成功!');
+        	    $("#iuLink").css('display',"");
+	            $("#iuLink").val(response.data.link);
+	            $("#record").attr('src','record.php?u='+response.data.link);
+            }else{
+            	// return only link for facebook share
+            	return response.data.link;
+            }
         }
     }
 });
@@ -110,7 +117,7 @@ $.ajax({
    </div>
 
    <div id="post2iu" style="display:none">
-     <button onclick="uploadToImgur()" class="post-button">上傳到ImgUR</button><br><br>
+     <button onclick="uploadToImgur(1)" class="post-button">上傳到ImgUR</button><br><br>
      <input id="iuLink" size="30" onclick="this.setSelectionRange(0, this.value.length)" style="display: none" /><br>
      <img id="record" src="" style="visibility:hidden" />
 </div>
