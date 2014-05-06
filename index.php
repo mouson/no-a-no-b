@@ -1,5 +1,7 @@
 <?php
 
+require_once('lib.php');
+
 $currentPage="http://trending.shouko.tw/no-a-no-b/";
 $bigImage = "demo.png";
 
@@ -171,6 +173,24 @@ $.ajax({
 </div>
 <br><br>
 
+<table class="flag-backs">
+<tr><td></td><td></td><td>最新作品:</td><td></td><td></td></tr>
+<?php
+$query = "SELECT img, time FROM record ORDER by time DESC LIMIT 0,5";
+$result = qMysql($query);
+$count = 0;
+
+  echo "<tr>";
+while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
+    echo '<td><a href="./?u='.$row[0].'"><img src="http://i.imgur.com/'.$row[0].'t.png"></a><br>'.date2before(strtotime($row[1])).'</td>';
+$count++;
+}
+echo "</tr>";
+?>
+<tr><td></td><td></td><td><a href="list.php">[看更多作品]</a></td><td></td><td></td></tr>
+</table>
+
+<br><br>
 <div class="adsense">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"

@@ -85,15 +85,14 @@ generatePager($p);
 <table class="flag-backs">
 <?php
 $limit = ($p - 1)*16;
-$query = "SELECT img FROM record ORDER by time DESC LIMIT ".$limit.",16";
+$query = "SELECT img, time FROM record ORDER by time DESC LIMIT ".$limit.",16";
 $result = qMysql($query);
 $count = 0;
 while ($row = mysql_fetch_array($result, MYSQL_NUM)) {
 if($count % 4 == 0){
 	echo "<tr>";
 }
-    echo '<td><a href="./?u='.$row[0].'"><img src="http://i.imgur.com/'.$row[0].'t.png"></a>';
-//    echo '<br><div class="fb-like" data-href="http://trending.shouko.tw/no-a-no-b/?u='.$row[0].'" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>';
+    echo '<td><a href="./?u='.$row[0].'"><img src="http://i.imgur.com/'.$row[0].'t.png"></a><br>'.date2before(strtotime($row[1]));
     echo "</td><td> </td>";
 if($count % 4 == 3){
 	echo "</tr><tr><td> </td></tr><tr><td> </td></tr>";

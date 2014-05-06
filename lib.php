@@ -14,4 +14,23 @@ function qMysql($str){
    return $result;
 }
 
+function date2before($val)
+{
+ $diff = time() - $val;
+
+ if ($diff < 0) {
+ return '不久的將來';
+ } elseif ($diff < 60) {
+ return $diff . '秒前';
+ } elseif ($diff < 3600) {
+ return floor($diff/60) . '分鐘前';
+ } elseif ($diff < 86400) {
+ return floor($diff/3600) . '小時前';
+ } elseif ($diff < 604800) {
+ return floor($diff/86400) . '天前';
+ } else {
+ return floor($diff/604800) . '週前';
+ }
+}
+
 ?>
