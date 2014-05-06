@@ -107,7 +107,7 @@ $count++;
 generatePager($p);
 ?>
 </div>
-
+<br>
 <div class="adsense">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <ins class="adsbygoogle"

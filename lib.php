@@ -14,6 +14,9 @@ function qMysql($str){
    return $result;
 }
 
+
+// http://blog.xuite.net/dizzy03/murmur/58049441-[PHP]%20PHP把時間計算成幾分鐘前、幾個小時前、幾天前...的函數
+
 function date2before($val)
 {
  $diff = time() - $val;
