@@ -52,8 +52,6 @@ if(isset($_GET['p']) && $_GET['p']!=0){
   $p = 1;
 }
 
-$bigImage = "demo.png";
-
 ?>
 <!DOCTYPE HTML>
 <html>
