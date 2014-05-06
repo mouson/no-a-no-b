@@ -14,6 +14,38 @@ function qMysql($str){
    return $result;
 }
 
+function generatePager($p){
+    $start = ($p-1)/10;
+  $start = floor($start);
+  $start *= 10;
+  $start += 1;
+
+if($start!=1){
+  echo '<a href="list.php">&lt;&lt; 最新</a>&nbsp;&nbsp;';
+  echo '<a href="list.php?p=';
+  echo $start-1;
+  echo '">&lt; 較新</a>&nbsp;&nbsp;';
+}
+
+for($i = 0; $i < 10; $i++){
+  if( $start+$i != $p){
+    echo '<a href="list.php?p=';
+    echo $start+$i;
+    echo '">';
+  }
+  echo $start+$i;
+  if( $start+$i != $p){
+    echo '</a>';
+  }
+  echo '&nbsp;&nbsp;';
+}
+
+echo '<a href="list.php?p=';
+echo $p + 1;
+echo '">較舊 &gt;</a>';
+
+}
+
 if(isset($_GET['p']) && $_GET['p']!=0){
   $p = abs($_GET['p']);
 }else{
@@ -61,35 +93,7 @@ $bigImage = "demo.png";
 </div>
 <div class="pager">
 <?php
-  $start = ($p-1)/10;
-  $start = floor($start);
-  $start *= 10;
-  $start += 1;
-
-if($start!=1){
-  echo '<a href="list.php">&lt;&lt; 最新</a>&nbsp;&nbsp;';
-  echo '<a href="list.php?p=';
-  echo $start-1;
-  echo '">&lt; 較新</a>&nbsp;&nbsp;';
-}
-
-for($i = 0; $i < 10; $i++){
-  if( $start+$i != $p){
-    echo '<a href="list.php?p=';
-    echo $start+$i;
-    echo '">';
-  }
-  echo $start+$i;
-  if( $start+$i != $p){
-    echo '</a>';
-  }
-  echo '&nbsp;&nbsp;';
-}
-
-echo '<a href="list.php?p=';
-echo $p + 1;
-echo '">較舊 &gt;</a>';
-
+generatePager($p);
 ?>
 </div><br>
 <table class="flag-backs">
@@ -112,6 +116,12 @@ $count++;
 }
 ?>
 </table>
+<br>
+<div class="pager">
+<?php
+generatePager($p);
+?>
+</div>
 
 <div class="adsense">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
