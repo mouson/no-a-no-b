@@ -4,7 +4,7 @@
 
   <title>我是XX 我反XX 產生器</title>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="style.css?4">
+  <link rel="stylesheet" href="style.css?5">
   <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
   <script src="./html2canvas.js?"></script>
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -111,8 +111,21 @@ $.ajax({
      <button onclick="uploadToImgur()" class="post-button">上傳到ImgUR</button><br><br>
      <input id="iuLink" size="30" onclick="this.setSelectionRange(0, this.value.length)" style="display: none" /><br>
      <img id="record" src="" style="visibility:hidden" />
-   </div>
-   <div class="fb-comments" data-href="http://trending.shouko.tw/no-a-no-b/" data-numposts="10" data-colorscheme="light"></div>
+</div>
+<br><br>
+
+<div class="adsense">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-5458419594845683"
+     data-ad-slot="9742241244"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+   <div class="fb-comments" data-href="http://trending.shouko.tw/no-a-no-b/" data-numposts="5" data-colorscheme="light"></div>
   <div id="flag-outline" style="background-image: url('flag_back/taiwan.png'); visibility: hidden">
     <ul class="flag-info">
       <span id="result-cb" class="results">反呵呵</span>
