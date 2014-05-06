@@ -163,7 +163,7 @@ $.ajax({
 
    <div id="post2iu" style="display:none">
      <button onclick="uploadToImgur(0)" class="post-button">上傳到ImgUR</button> 
-     <button onclick="uploadToImgur(1)" class="post-button">上傳到FB</button> 
+     <button onclick="uploadToImgur(1)" class="post-button">分享到FB</button> 
      <button onclick="uploadToImgur(2)" class="post-button">分享到Plurk</button><br><br>
      <input id="iuLink" size="30" onclick="this.setSelectionRange(0, this.value.length)" style="display: none" /><br>
      <img id="record" src="" style="visibility:hidden" />
