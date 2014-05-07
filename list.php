@@ -8,11 +8,8 @@ function generatePager($p){
   $start *= 10;
   $start += 1;
 
-if($start != 1){
-  echo '<a href="list.php">&lt;&lt; 最新</a>&nbsp;&nbsp;';
-}
-
 if($p != 1){
+  echo '<a href="list.php">&lt;&lt; 最新</a>&nbsp;&nbsp;';
   echo '<a href="list.php?p=';
   echo $p-1;
   echo '">&lt; 較新</a>&nbsp;&nbsp;';
@@ -75,7 +72,7 @@ if(isset($_GET['p']) && $_GET['p']!=0){
     <h1>我是XX 我反XX 產生器</h1>
     <h4 class="navbar"><a href="./">[產生器]</a> <a href="provide.php">[背景圖投稿]</a> <a href="list.php">[網友作品]</a></h4>
     <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<<br>
-    <h4><div class="fb-like" data-href="<?php echo $currentPage; ?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+    <h4><div class="fb-like-box" data-href="https://www.facebook.com/im.xx.i.anti.xx" data-colorscheme="light" data-show-faces="false" data-header="true" data-stream="false" data-show-border="true"></div>
 </h4>
 </div>
 <div class="pager">
