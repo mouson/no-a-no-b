@@ -8,10 +8,13 @@ function generatePager($p){
   $start *= 10;
   $start += 1;
 
-if($start!=1){
+if($start != 1){
   echo '<a href="list.php">&lt;&lt; 最新</a>&nbsp;&nbsp;';
+}
+
+if($p != 1){
   echo '<a href="list.php?p=';
-  echo $start-1;
+  echo $p-1;
   echo '">&lt; 較新</a>&nbsp;&nbsp;';
 }
 
