@@ -17,10 +17,10 @@ if(isset($_GET['u'])){
 <html>
 <head>
 
-  <title>我是XX 我反XX 產生器</title>
+  <title>我是牛，我反芻 產生器</title>
   <meta charset="UTF-8">
 
-<meta property="og:title" content="我是XX 我反XX 產生器" />
+<meta property="og:title" content="我是牛，我反芻 產生器" />
 <meta property="og:type" content="article" />
 <meta property="og:image" content="<?php echo $bigImage; ?>" />
 <meta property="og:url" content="" />
@@ -56,31 +56,31 @@ $.ajax({
 			imglink = imglink[0];
             $("#record").attr('src','record.php?u='+imglink);
         	if(sType==0){
-				// show alert when upload success        	
+				// show alert when upload success
     	        alert('上傳成功!');
         	    $("#iuLink").css('display',"");
 	            $("#iuLink").val(response.data.link);
             }else{
             	switch(sType){
-            	
+
             	case 1:
 
             	// share to facebook
 					 window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('http://trending.shouko.tw/no-a-no-b/?u='+imglink), 
-      'facebook-share-dialog', 
-      'width=626,height=436'); 
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://cattle.shouko.tw/?u='+imglink),
+      'facebook-share-dialog',
+      'width=626,height=436');
 
       				break;
 
       			case 2:
       			// share to plurk
-      				window.open('https://www.plurk.com/?qualifier=shares&status='.concat(encodeURIComponent('http://trending.shouko.tw/no-a-no-b/?u='+imglink)).concat(' ').concat('(').concat(encodeURIComponent(document.title)).concat(')'));
+      				window.open('https://www.plurk.com/?qualifier=shares&status='.concat(encodeURIComponent('https://cattle.shouko.tw/?u='+imglink)).concat(' ').concat('(').concat(encodeURIComponent(document.title)).concat(')'));
       				break;
 
       			}
 
-            
+
             }
         }
     }
@@ -119,10 +119,10 @@ $.ajax({
 }(document, 'script', 'facebook-jssdk'));</script>
 
   <div class="creator-form">
-    <h1>我是XX 我反XX 產生器</h1>
+    <h1>我是牛，我反芻 產生器</h1>
     <h4 class="navbar"><a href="./">[產生器]</a> <a href="provide.php">[背景圖投稿]</a> <a href="list.php">[網友作品]</a></h4>
     <h4>歡迎使用 No A No B 產生器<br>請填入資料即可產生相關圖片 ^.<<br>
-    <h4><div class="fb-like-box" data-href="https://www.facebook.com/im.xx.i.anti.xx" data-colorscheme="light" data-show-faces="false" data-header="true" data-stream="false" data-show-border="true"></div>
+    <h4><div class="fb-like-box" data-href="https://www.facebook.com/ruminant.cattle" data-colorscheme="light" data-show-faces="false" data-header="true" data-stream="false" data-show-border="true"></div>
 </h4>
 
 <div id="data-form">
@@ -170,8 +170,8 @@ $.ajax({
    </div>
 
    <div id="post2iu" style="display:none">
-     <button onclick="uploadToImgur(0)" class="post-button">上傳到ImgUR</button> 
-     <button onclick="uploadToImgur(1)" class="post-button">分享到FB</button> 
+     <button onclick="uploadToImgur(0)" class="post-button">上傳到ImgUR</button>
+     <button onclick="uploadToImgur(1)" class="post-button">分享到FB</button>
      <button onclick="uploadToImgur(2)" class="post-button">分享到Plurk</button><br><br>
      <input id="iuLink" size="30" onclick="this.setSelectionRange(0, this.value.length)" style="display: none" /><br>
      <img id="record" src="" style="visibility:hidden" />

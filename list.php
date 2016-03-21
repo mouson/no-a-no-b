@@ -45,7 +45,7 @@ if(isset($_GET['p']) && $_GET['p']!=0){
 <html>
 <head>
 
-  <title>我是XX 我反XX 產生器 - 網友作品</title>
+  <title>我是牛，我反芻 產生器 - 網友作品</title>
   <meta charset="UTF-8">
 
 <meta property="og:title" content="我是XX 我反XX 產生器 - 最新作品" />

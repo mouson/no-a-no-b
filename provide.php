@@ -2,7 +2,7 @@
 <html>
 <head>
 
-  <title>我是XX 我反XX 產生器</title>
+  <title>我是牛，我反芻 產生器</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css?4">
 </head>
@@ -18,9 +18,9 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
   <div class="creator-form">
-    <h1>我是XX 我反XX 產生器</h1>
+    <h1>我是牛，我反芻 產生器</h1>
     <h4 class="navbar"><a href="./">[產生器]</a> <a href="provide.php">[背景圖投稿]</a> <a href="list.php">[網友作品]</a></h4>
-    <h4>歡迎使用 No A No B 產生器投稿區<br>請在以下留言表單填入想提供的背景圖網址<br>(大小 720x530 格式 png 為佳) ><<br>
+    <h4>歡迎使用 我是牛，我反芻 產生器投稿區<br>請在以下留言表單填入想提供的背景圖網址<br>(大小 720x530 格式 png 為佳) ><<br>
   </h4>
 
    <div class="fb-comments" data-href="http://trending.shouko.tw/no-a-no-b/provide.php" data-numposts="10" data-colorscheme="light"></div>
