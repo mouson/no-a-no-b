@@ -1,7 +1,7 @@
 <?php
 
 function qMysql($str){
-   $link = mysql_connect("localhost", "nanb", "nanb");
+   $link = mysql_connect("localhost", "nanb", "");
    if (!$link) {
     die('Could not connect: ' . mysql_error());
    }

@@ -50,7 +50,7 @@ if(isset($_GET['p']) && $_GET['p']!=0){
 
 <meta property="og:title" content="我是XX 我反XX 產生器 - 最新作品" />
 <meta property="og:type" content="article" />
-<meta property="og:image" content="<?php echo $bigImage; ?>" />
+<meta property="og:image" content="" />
 <meta property="og:url" content="" />
 <meta property="og:description" content="" />
 
